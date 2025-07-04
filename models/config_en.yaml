@@ -1,0 +1,7 @@
+model_path: "models/checkpoints/mobilenet_demostand_en.onnx"
+frame_interval: 2
+stride: 8
+window_size: 16
+threshold: 0.6
+mean: [123.675, 116.28, 103.53]
+std: [58.395, 57.12, 57.375]

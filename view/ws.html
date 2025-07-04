@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Recognition</title>
+    <link rel="stylesheet" href="ws.css">
+</head>
+<body>
+    <div class="language-toggle">
+        <button id="langRu" class="lang-btn active" onclick="changeLanguage('ru')">RU</button>
+        <button id="langEn" class="lang-btn" onclick="changeLanguage('en')">EN</button>
+    </div>
+
+    <div class="container">
+        <div class="video-container">
+            <video id="webcam" autoplay playsinline></video>
+        </div>
+
+        <div class="controls">
+            <div class="camera-controls">
+                <button id="startWebcamButton" class="btn primary">
+                    Включить камеру
+                </button>
+                <button id="stopWebcamButton" class="btn danger hidden">
+                    Выключить камеру
+                </button>
+            </div>
+
+            <div id="streamControls" class="hidden">
+                <button id="startStreamButton" class="btn primary">
+                    Запустить стрим
+                </button>
+                <button id="stopStreamButton" class="btn danger hidden">
+                    Остановить стрим
+                </button>
+
+                <div class="mode-toggle">
+                    <span id="modeLabel">Режим:</span>
+                    <div class="toggle-container">
+                        <button id="liveModeBtn" class="toggle-btn active">
+                            LIVE
+                        </button>
+                        <button id="trainingModeBtn" class="toggle-btn">
+                            Тренировка
+                        </button>
+                    </div>
+                </div>
+
+                <div id="trainingControls" class="hidden">
+                    <div class="gloss-controls">
+                        <input type="text" id="gloss_text" placeholder="Введите жест">
+                        <button id="sendGlossButton" class="btn primary">
+                            Выбрать жест
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="message-container" id="messageContainer"></div>
+
+    <script src="ws.js"></script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+https://rndml-team-cv.obs.ru-moscow-1.hc.sbercloud.ru/rsl/demostand_models/tsm/ru/mobilenet_demostand_ru.onnx
+
+https://rndml-team-cv.obs.ru-moscow-1.hc.sbercloud.ru/rsl/demostand_models/tsm/en/mobilenet_demostand_en.onnx
