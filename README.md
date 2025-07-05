@@ -1,7 +1,7 @@
 # Automated Sign Language Tutor Project
 
 This is the official repository for the paper _"Automated Sign Language Tutor: A Dual-Language Real-Time Approach
-for REAL and ASL"_.
+for RSL and ASL"_.
 
 Appearance and video of the stand operation:
 <div style="display: flex; align-items: center; gap: 20px; margin: 20px 0;">
@@ -219,6 +219,12 @@ const translations = {
 ### Logging
 1. **Client**: Open browser developer console (F12)
 2. **Server**: Logs are printed in the server console
+
+## Authors
+— [Petr Surovtsev]()  
+— [Alexander Nagaev](https://github.com/nagadit)  
+— [Alexander Kapitanov](https://github.com/hukenovs/)  
+— [Ilya Ovodov](https://github.com/IlyaOvodov)  
 
 ## License
 This project is licensed under the APACHE License. See the LICENSE file for details.
