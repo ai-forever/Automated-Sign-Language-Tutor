@@ -1,7 +1,19 @@
 # Automated Sign Language Tutor Project
 
-Important Note: This repository contains a backend demonstration system for sign language recognition. The provided frontend (ws.html, ws.css, ws.js) serves as a basic example implementation to demonstrate backend functionality and is not a production-ready application. Developers should create their own frontend implementations tailored to specific use cases while using this backend as a recognition service.
+This is the official repository for the paper _"Automated Sign Language Tutor: A Dual-Language Real-Time Approach
+for REAL and ASL"_.
 
+Appearance and video of the stand operation:
+<div style="display: flex; align-items: center; gap: 20px; margin: 20px 0;">
+  <img src="imgs/Exterior.png" alt="Exterior" style="height: 400px; width: auto; border-radius: 8px;">
+  <a href="https://youtu.be/O9SDAkhRrK0" style="display: block;">
+    <img src="https://img.youtube.com/vi/O9SDAkhRrK0/0.jpg" alt="Demo Video" style="height: 400px; width: auto; border-radius: 8px;">
+  </a>
+</div>
+
+Important Note: This repository contains a backend system for sign language recognition (Streaming Sign Recognition Engine and Controller Process components). The provided frontend (ws.html, ws.css, ws.js) serves as a basic example implementation to demonstrate backend functionality and is not a production-ready application. Developers should create their own frontend implementations tailored to specific use cases while using this backend as a recognition service.
+
+It is also possible to use the backend with custom models.
 
 ## Key Features
 1. **Two operating modes**:
@@ -24,38 +36,13 @@ Important Note: This repository contains a backend demonstration system for sign
 pip install -r requirements.txt
 ```
 
-### Model Configuration
-1. Place the Russian and English models in the `models/checkpoints/` directory
-2. Create configuration files:
-   - `models/config_ru.yaml` for the Russian model
-   - `models/config_en.yaml` for the English model
+### Models Downloading 
+Download the models
 
-Example configuration file:
-```yaml
-model_path: "models/checkpoints/mobilenet_demostand_ru.onnx"
-frame_interval: 2
-stride: 8
-window_size: 16
-threshold: 0.6
-mean: [123.675, 116.28, 103.53]
-std: [58.395, 57.12, 57.375]
-```
+- https://rndml-team-cv.obs.ru-moscow-1.hc.sbercloud.ru/rsl/demostand_models/tsm/ru/mobilenet_demostand_ru.onnx
+- https://rndml-team-cv.obs.ru-moscow-1.hc.sbercloud.ru/rsl/demostand_models/tsm/en/mobilenet_demostand_en.onnx
 
-3. Create gesture class files:
-   - `models/constants_ru.py` with a `classes` variable for Russian
-   - `models/constants_en.py` with a `classes` variable for English
-
-Example `constants_ru.py`:
-```python
-classes = [
-    "привет",
-    "пока",
-    "спасибо",
-    "пожалуйста",
-    "да",
-    "нет"
-]
-```
+and place them in the folder `models/checkpoints/`.
 
 ### Running the Server
 ```bash
@@ -82,6 +69,23 @@ docker run -it -d -v $PWD:/app -p 3003:3003 sign-tutor
      - Perform the gesture in front of the camera
      - The system will notify you when the gesture is recognized correctly
 5. Switching interface and model language: Use the RU/EN buttons in the top right corner
+6. The recognition result is displayed in the server console.
+
+## Working with custom models
+
+1. Place ONNX models for Russian and English in the `models/checkpoints/` folder
+
+2. Update the configuration files:
+- `models/config_ru.yaml` for the Russian model,
+- `models/config_en.yaml` for the English model.
+
+Use the available files as examples.
+
+3. Update the sign class files:
+- `models/constants_ru.py ` with the `classes' variable for Russian,
+   - `models/constants_en.py ` with the `classes' variable for English.
+
+Use the available files as examples.
 
 ## System Architecture
 
